@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tatjana Heckel — Kontakt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0A3D62;
+    --navy-deep: #072A45;
+    --blue: #1B6FB8;
+    --sky: #7FB8E8;
+    --sky-pale: #E3F0FA;
+    --bg: #F4F6F8;
+    --card: #FFFFFF;
+    --ink: #14273A;
+    --ink-soft: #5C6E80;
+    --line: #E5EAEF;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 44px 18px;
+  }
+
+  .stage{
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .card{
+    background: var(--card);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 48px -24px rgba(10,61,98,0.35), 0 2px 8px rgba(10,61,98,0.08);
+    border: 1px solid var(--line);
+  }
+
+  /* --- Kopfbereich: Kreis-Motiv --- */
+  .head{
+    position: relative;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    padding: 30px 28px 56px;
+    overflow: hidden;
+  }
+
+  .head::before,
+  .head::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.22);
+  }
+  .head::before{
+    width: 200px; height: 200px;
+    top: -90px; right: -60px;
+  }
+  .head::after{
+    width: 120px; height: 120px;
+    top: 40px; right: 30px;
+    border-color: rgba(255,255,255,0.16);
+  }
+
+  .brandrow{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand{
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    color: #FFFFFF;
+    letter-spacing: 0.01em;
+  }
+
+  .brand span{
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.68);
+    margin-top: 2px;
+  }
+
+  .dept-tag{
+    position: relative;
+    z-index: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-top: 20px;
+  }
+
+  /* --- Avatar-Kreis, überlappt Kopf- und Inhaltsbereich --- */
+  .avatar{
+    position: absolute;
+    left: 28px;
+    bottom: -34px;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: var(--sky-pale);
+    border: 4px solid var(--card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--navy);
+    box-shadow: 0 6px 16px rgba(10,61,98,0.18);
+  }
+
+  .body{
+    padding: 46px 28px 28px;
+  }
+
+  .name{
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 0 0 3px;
+    color: var(--ink);
+  }
+
+  .title{
+    font-size: 13.5px;
+    color: var(--blue);
+    font-weight: 600;
+    margin: 0 0 2px;
+  }
+
+  .org{
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+  }
+
+  .fields{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .field{
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 0 12px;
+    align-items: start;
+    padding: 11px 0;
+    border-top: 1px solid var(--line);
+  }
+  .field:first-child{ border-top: none; }
+
+  .icon{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--sky-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    flex-shrink: 0;
+  }
+  .icon svg{ width: 12px; height: 12px; }
+
+  .value{
+    font-size: 14px;
+    line-height: 1.5;
+    padding-top: 2px;
+  }
+
+  .value a{
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .value a:hover{ color: var(--blue); }
+
+  .save-btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    background: var(--navy);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 24px;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+  .save-btn:hover{ background: var(--blue); }
+  .save-btn:active{ transform: translateY(1px); }
+  .save-btn svg{ width: 16px; height: 16px; flex-shrink: 0; }
+
+  .hint{
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    text-align: center;
+    margin: 12px 0 0;
+    line-height: 1.5;
+  }
+
+  .confirm{
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--blue);
+    height: 16px;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .confirm.show{ opacity: 1; }
+
+  @media (prefers-reduced-motion: reduce){
+    .save-btn{ transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="card">
+    <div class="head">
+      <div class="brandrow">
+        <div class="brand">MedLifeLab GmbH
+          <span>Innovation Hub of the Medical University of Innsbruck</span>
+        </div>
+      </div>
+      <div class="avatar">TH</div>
+    </div>
+
+    <div class="body">
+      <p class="name">Tatjana Heckel</p>
+      <p class="title">Technology Transfer &amp; IP Management</p>
+      <p class="org">MedLifeLab GmbH</p>
+
+      <div class="fields">
+        <div class="field">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="value"><a href="tel:+43512900371764">+43 512 900371764</a><br><span style="color:var(--ink-soft); font-size:11.5px;">Geschäftlich</span></div>
+        </div>
+        <div class="field">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" fill="none" stroke="none"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
+          <div class="value"><a href="mailto:Tatjana.Heckel@i-med.ac.at">Tatjana.Heckel@i-med.ac.at</a></div>
+        </div>
+        <div class="field">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div class="value"><a href="https://www.medlifelab.at" target="_blank" rel="noopener">www.medlifelab.at</a></div>
+        </div>
+        <div class="field">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="value">Fritz-Pregl-Straße 3<br>6020 Innsbruck, Österreich</div>
+        </div>
+      </div>
+
+      <button class="save-btn" id="saveBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        In Outlook speichern
+      </button>
+      <div class="confirm" id="confirmMsg">.vcf-Datei wurde heruntergeladen</div>
+      <p class="hint">Lädt die Kontaktkarte als .vcf-Datei herunter. Klicken Sie danach direkt auf die Download-Anzeige Ihres Browsers (unten) — Outlook öffnet den vorausgefüllten Kontakt, Sie müssen nur noch „Speichern und schließen" klicken.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const vcard = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "N:Heckel;Tatjana;;;",
+    "FN:Tatjana Heckel",
+    "ORG:MedLifeLab GmbH",
+    "TITLE:Technology Transfer & IP Management",
+    "TEL;TYPE=WORK,VOICE:+43512900371764",
+    "ADR;TYPE=WORK:;;Fritz-Pregl-Straße 3;Innsbruck;;6020;Austria",
+    "URL;TYPE=WORK:https://www.medlifelab.at",
+    "EMAIL;TYPE=PREF,INTERNET:Tatjana.Heckel@i-med.ac.at",
+    "END:VCARD"
+  ].join("\r\n");
+
+  document.getElementById("saveBtn").addEventListener("click", function(){
+    const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Tatjana_Heckel.vcf";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    const msg = document.getElementById("confirmMsg");
+    msg.classList.add("show");
+    setTimeout(() => msg.classList.remove("show"), 3500);
+  });
+</script>
+
+</body>
+</html>
